@@ -1,0 +1,92 @@
+{
+  "xmlTemplate": [
+    {
+      "id": "123",
+      "describe": ""
+    },
+    {
+      "id": "1234",
+      "describe": ""
+    }
+  ],
+  "view": {
+    "type": "LinearLayout",
+    "layout": {
+      "margin": [
+        "10",
+        "20",
+        "300",
+        "40"
+      ],
+      "padding": [
+        "1",
+        "2",
+        "30",
+        "4"
+      ],
+      "background-color": "#000000",
+      "orientation": "vertical"
+    },
+    "data": {},
+    "children": [
+      {
+        "type": "TextView",
+        "layout": {
+          "background-color": "#ff0000",
+          "text": "hellodinamic"
+        }
+      },
+      {
+        "type": "TextView",
+        "layout": {
+          "background-color": "#00ff00",
+          "text": "hellodinamic2",
+          "padding": [
+            "1",
+            "2",
+            "30",
+            "4"
+          ]
+        }
+      },
+      {
+        "type": "TabLayout",
+        "layout": {
+          "background-color": "#0000ff"
+        },
+        "items": [
+          "tab0",
+          "tab1",
+          "tab2",
+          "tab3",
+          "tab4"
+        ]
+      },
+      {
+        "type": "TabContent",
+        "children": [
+          {
+            "type": "TextView",
+            "text": "tab0"
+          },
+          {
+            "type": "TextView",
+            "text": "tab1"
+          },
+          {
+            "type": "TextView",
+            "text": "tab2"
+          },
+          {
+            "type": "TextView",
+            "text": "tab3"
+          },
+          {
+            "type": "TextView",
+            "text": "tab4"
+          }
+        ]
+      }
+    ]
+  }
+}
