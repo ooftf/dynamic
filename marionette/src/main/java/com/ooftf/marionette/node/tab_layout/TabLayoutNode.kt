@@ -1,18 +1,18 @@
-package com.ooftf.marionette.nr.tab_layout
+package com.ooftf.marionette.node.tab_layout
 
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.tabs.TabLayout
-import com.ooftf.fake.myapplication.nr.BaseNodeRender
-import com.ooftf.marionette.nr.NodeRenderContext
+import com.ooftf.marionette.node.BaseNode
+import com.ooftf.marionette.node.NodeContext
 import org.json.JSONObject
 
-class TabLayoutNode(context: NodeRenderContext) : BaseNodeRender<TabLayout>(context) {
+class TabLayoutNode(context: NodeContext) : BaseNode<TabLayout>(context) {
     override fun createView(): TabLayout {
         return TabLayout(context.context)
     }
 
-    override fun parse(parent: ViewGroup, json: JSONObject): View {
+    override fun parse(parent: ViewGroup?, json: JSONObject): View {
         super.parse(parent, json)
         view?.let {tab->
             if(json.has("items")){

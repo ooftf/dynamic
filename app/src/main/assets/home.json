@@ -1,89 +1,417 @@
 {
-  "xmlTemplate": [
+  "templates": [
     {
-      "id": "123",
-      "describe": ""
+      "id": "2314",
+      "view": {
+        "type": "ImageView",
+        "layout": {
+          "background-color": "#ff0000",
+          "url": "@{url}"
+        }
+      }
     },
     {
-      "id": "1234",
-      "describe": ""
+      "id": "234",
+      "view": {
+        "type": "ImageView",
+        "layout": {
+          "width": "match_parent",
+          "height": "match_parent",
+          "scaleType": "CENTER_CROP",
+          "background-color": "#ff0000",
+          "url": "@{url}"
+        }
+      }
+    },
+    {
+      "id": "2222",
+      "view": {
+        "type": "LinearLayout",
+        "layout": {
+          "padding": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ],
+          "orientation": "horizontal",
+          "gravity": "center_vertical"
+        },
+        "children": [
+          {
+            "type": "ImageView",
+            "layout": {
+              "width": "100",
+              "height": "100",
+              "url": "@{icon}"
+            }
+          },
+          {
+            "type": "TextView",
+            "layout": {
+              "margin": [
+                "20",
+                "0",
+                "0",
+                "0"
+              ],
+              "textColor": "#000000",
+              "textSize": "20",
+              "text": "@{content}"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "2313",
+      "view": {
+        "type": "TextView",
+        "layout": {
+          "padding": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ],
+          "width": "match_parent",
+          "height": "wrap_content",
+          "background-color": "#ff0000",
+          "text": "@{title}"
+        }
+      }
     }
   ],
   "view": {
     "type": "LinearLayout",
     "layout": {
       "margin": [
-        "10",
-        "20",
-        "300",
-        "40"
+        "0",
+        "0",
+        "0",
+        "0"
       ],
       "padding": [
-        "1",
-        "2",
-        "30",
-        "4"
+        "0",
+        "0",
+        "0",
+        "0"
       ],
+      "width": "match_parent",
+      "height": "match_parent",
       "background-color": "#000000",
       "orientation": "vertical"
     },
-    "data": {},
     "children": [
       {
-        "type": "TextView",
+        "type": "Banner",
         "layout": {
-          "background-color": "#ff0000",
-          "text": "hellodinamic"
-        }
+          "width": "match_parent",
+          "height": "360"
+        },
+        "children": [
+          {
+            "templateId": "234",
+            "field": {
+              "url": "https://img.zcool.cn/community/01c06a5938c8c0a8012193a3c71da5.jpg@2o.jpg"
+            }
+          },
+          {
+            "templateId": "234",
+            "field": {
+              "url": "https://img.zcool.cn/community/017b2a5938c8bca8012193a37db72c.jpg"
+            }
+          },
+          {
+            "templateId": "234",
+            "field": {
+              "url": "https://img.zcool.cn/community/01c06a5938c8c0a8012193a3c71da5.jpg@2o.jpg"
+            }
+          },
+          {
+            "templateId": "234",
+            "field": {
+              "url": "https://img.zcool.cn/community/017b2a5938c8bca8012193a37db72c.jpg"
+            }
+          },
+          {
+            "templateId": "234",
+            "field": {
+              "url": "https://img.zcool.cn/community/01c06a5938c8c0a8012193a3c71da5.jpg@2o.jpg"
+            }
+          }
+        ]
       },
       {
-        "type": "TextView",
+        "type": "LinearLayout",
         "layout": {
-          "background-color": "#00ff00",
-          "text": "hellodinamic2",
-          "padding": [
-            "1",
-            "2",
-            "30",
-            "4"
-          ]
-        }
+          "width": "match_parent",
+          "height": "300",
+          "orientation": "horizontal"
+        },
+        "children": [
+          {
+            "type": "LinearLayout",
+            "layout": {
+              "width": "0",
+              "weight": "1",
+              "height": "match_parent",
+              "orientation": "vertical"
+            },
+            "children": [
+              {
+                "type": "TextView",
+                "layout": {
+                  "width": "match_parent",
+                  "weight": "1",
+                  "height": "0",
+                  "gravity": "center",
+                  "background-color": "#994422",
+                  "text": "left top",
+                  "textColor": "#FFFFFF",
+                  "textSize": "20"
+                }
+              },
+              {
+                "type": "TextView",
+                "layout": {
+                  "width": "match_parent",
+                  "weight": "1",
+                  "height": "0",
+                  "gravity": "center",
+                  "background-color": "#223399",
+                  "text": "left bottom",
+                  "textColor": "#FFFFFF",
+                  "textSize": "20"
+                }
+              }
+            ]
+          },
+          {
+            "type": "TextView",
+            "layout": {
+              "width": "0",
+              "weight": "1",
+              "height": "match_parent",
+              "gravity": "center",
+              "background-color": "#ff0000",
+              "text": "right",
+              "textColor": "#FFFFFF",
+              "textSize": "33"
+            }
+          }
+        ]
       },
       {
         "type": "TabLayout",
+        "id": "tab_layout",
         "layout": {
           "background-color": "#0000ff"
         },
         "items": [
-          "tab0",
-          "tab1",
-          "tab2",
-          "tab3",
-          "tab4"
+          "我的",
+          "收藏",
+          "热门",
+          "最新",
+          "个人",
+          "回收"
         ]
       },
       {
         "type": "TabContent",
+        "tabLayoutId": "tab_layout",
+        "id": "tab_content",
+        "layout": {
+          "width": "match_parent",
+          "height": "match_parent",
+          "background-color": "#02034f"
+        },
         "children": [
           {
-            "type": "TextView",
-            "text": "tab0"
+            "type": "RecyclerView",
+            "layout": {
+              "width": "match_parent",
+              "height": "match_parent",
+              "background-color": "#ffffff"
+            },
+            "children": [
+              {
+                "templateId": "2313",
+                "field": {
+                  "title": "第一个"
+                }
+              },
+              {
+                "templateId": "2313",
+                "field": {
+                  "title": "第二个"
+                }
+              },
+              {
+                "templateId": "2313",
+                "field": {
+                  "title": "第三个"
+                }
+              },
+              {
+                "templateId": "2314",
+                "field": {
+                  "url": "https://img.zcool.cn/community/017b2a5938c8bca8012193a37db72c.jpg"
+                }
+              },
+              {
+                "templateId": "2313",
+                "field": {
+                  "title": "第四个"
+                }
+              },
+              {
+                "templateId": "2313",
+                "field": {
+                  "title": "第五个"
+                }
+              },
+              {
+                "templateId": "2314",
+                "field": {
+                  "url": "https://img.zcool.cn/community/01c06a5938c8c0a8012193a3c71da5.jpg@2o.jpg"
+                }
+              },
+              {
+                "templateId": "2222",
+                "field": {
+                  "icon": "https://img.zcool.cn/community/01985a593aadbba8012193a359969e.jpg@1280w_1l_2o_100sh.jpg",
+                  "content": "这是内容描述"
+                }
+              },
+              {
+                "templateId": "2313",
+                "field": {
+                  "title": "第6个"
+                }
+              },
+              {
+                "templateId": "2313",
+                "field": {
+                  "title": "第7个"
+                }
+              },
+              {
+                "templateId": "2314",
+                "field": {
+                  "url": "https://img.zcool.cn/community/01c06a5938c8c0a8012193a3c71da5.jpg@2o.jpg"
+                }
+              }
+            ]
           },
           {
+            "id": "item_tabContent_1",
             "type": "TextView",
-            "text": "tab1"
+            "layout": {
+              "background-color": "#0000ff",
+              "text": "tab1"
+            }
           },
           {
+            "id": "item_tabContent_2",
             "type": "TextView",
-            "text": "tab2"
+            "layout": {
+              "background-color": "#0000ff",
+              "text": "tab2"
+            }
           },
           {
+            "id": "item_tabContent_3",
             "type": "TextView",
-            "text": "tab3"
+            "layout": {
+              "background-color": "#0000ff",
+              "text": "tab3"
+            }
           },
           {
+            "id": "item_tabContent_4",
             "type": "TextView",
-            "text": "tab4"
+            "layout": {
+              "background-color": "#0000ff",
+              "text": "tab4"
+            }
+          },
+          {
+            "type": "RecyclerView",
+            "layout": {
+              "width": "match_parent",
+              "height": "match_parent",
+              "background-color": "#ffffff"
+            },
+            "children": [
+              {
+                "templateId": "2313",
+                "field": {
+                  "title": "第一个"
+                }
+              },
+              {
+                "templateId": "2313",
+                "field": {
+                  "title": "第二个"
+                }
+              },
+              {
+                "templateId": "2313",
+                "field": {
+                  "title": "第三个"
+                }
+              },
+              {
+                "templateId": "2314",
+                "field": {
+                  "url": "https://img.zcool.cn/community/017b2a5938c8bca8012193a37db72c.jpg"
+                }
+              },
+              {
+                "templateId": "2313",
+                "field": {
+                  "title": "第四个"
+                }
+              },
+              {
+                "templateId": "2313",
+                "field": {
+                  "title": "第五个"
+                }
+              },
+              {
+                "templateId": "2314",
+                "field": {
+                  "url": "https://img.zcool.cn/community/01c06a5938c8c0a8012193a3c71da5.jpg@2o.jpg"
+                }
+              },
+              {
+                "templateId": "2222",
+                "field": {
+                  "icon": "https://img.zcool.cn/community/01985a593aadbba8012193a359969e.jpg@1280w_1l_2o_100sh.jpg",
+                  "content": "这是内容描述"
+                }
+              },
+              {
+                "templateId": "2313",
+                "field": {
+                  "title": "第6个"
+                }
+              },
+              {
+                "templateId": "2313",
+                "field": {
+                  "title": "第7个"
+                }
+              },
+              {
+                "templateId": "2314",
+                "field": {
+                  "url": "https://img.zcool.cn/community/01c06a5938c8c0a8012193a3c71da5.jpg@2o.jpg"
+                }
+              }
+            ]
           }
         ]
       }

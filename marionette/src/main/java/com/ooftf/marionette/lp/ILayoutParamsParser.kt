@@ -1,4 +1,4 @@
-package com.ooftf.fake.myapplication.lp
+package com.ooftf.marionette.lp
 
 import android.view.ViewGroup
 import org.json.JSONObject
