@@ -11,6 +11,6 @@ object LayoutParamsParserManager {
         map[ViewGroup.MarginLayoutParams::class.java] = MarginLayoutParamsParser()
     }
     fun findParse(lp:ViewGroup.LayoutParams): ILayoutParamsParser? {
-        return map.get(lp.javaClass)?: map[ViewGroup.LayoutParams::class.java]
+        return map.get(lp.javaClass)?: map[ViewGroup.MarginLayoutParams::class.java]
     }
 }

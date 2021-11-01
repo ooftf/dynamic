@@ -5,7 +5,9 @@ import android.util.Log
 import android.util.SparseArray
 import android.view.View
 import android.view.ViewGroup
+import com.ooftf.basic.utils.toast
 import com.ooftf.marionette.node.banner.BannerNodeCreator
+import com.ooftf.marionette.node.coordinator.CoordinatorLayoutNodeCreator
 import com.ooftf.marionette.node.image.ImageNodeCreator
 import com.ooftf.marionette.node.linear_layout.LinearLayoutNodeCreator
 import com.ooftf.marionette.node.recycler_view.RecyclerViewNodeCreator
@@ -13,7 +15,8 @@ import com.ooftf.marionette.node.tab_content.TabContentNodeCreator
 import com.ooftf.marionette.node.tab_layout.TabLayoutCreator
 import com.ooftf.marionette.node.text.TextNodeCreator
 import com.ooftf.marionette.node.view.ViewNode
-import com.ooftf.marionette.node.view.ViewNodeRenderCreator
+import com.ooftf.marionette.node.view.ViewNodeCreator
+import com.ooftf.marionette.node.waterfall.WaterfallNodeCreator
 import com.ooftf.marionette.template.Template
 import org.json.JSONObject
 
@@ -22,19 +25,35 @@ import org.json.JSONObject
 class NodeContext(val context: Context) {
     var rootNode: INode? = null
     val nodeRenderCreatorMap = HashMap<String, INodeCreator>()
+    val eventHandles = HashMap<String, (JSONObject)->Unit>()
     val templateMap = SparseArray<Template>()
     init {
         registerNodeRenderCreator("LinearLayout", LinearLayoutNodeCreator())
         registerNodeRenderCreator("TextView", TextNodeCreator())
-        registerNodeRenderCreator("View", ViewNodeRenderCreator())
+        registerNodeRenderCreator("View", ViewNodeCreator())
         registerNodeRenderCreator("TabLayout", TabLayoutCreator())
         registerNodeRenderCreator("TabContent", TabContentNodeCreator())
         registerNodeRenderCreator("RecyclerView", RecyclerViewNodeCreator())
         registerNodeRenderCreator("ImageView", ImageNodeCreator())
         registerNodeRenderCreator("Banner", BannerNodeCreator())
+        registerNodeRenderCreator("Waterfall", WaterfallNodeCreator())
+        registerNodeRenderCreator("CoordinatorLayout", CoordinatorLayoutNodeCreator())
 
+
+        eventHandles["openUrl"] = {
+            val url = it.getString("url")
+            toast(url)
+        }
+
+        eventHandles["toast"] = {
+            val url = it.getString("content")
+            toast(url)
+        }
     }
 
+    fun registerEventHandle(action:String,handler:(JSONObject)->Unit){
+        eventHandles[action] = handler
+    }
     fun findNodeRenderById(id: String): INode? {
         return rootNode?.findNodeRenderById(id)
     }
@@ -69,5 +88,9 @@ class NodeContext(val context: Context) {
 
     fun registerNodeRenderCreator(key: String, creator: INodeCreator) {
         nodeRenderCreatorMap.put(key, creator)
+    }
+
+    fun dispatchEvent(action:String,params:JSONObject){
+        eventHandles.get(action)?.invoke(params)
     }
 }

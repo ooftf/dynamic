@@ -1,12 +1,16 @@
 package com.ooftf.marionette.node
 
 import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.util.SparseArray
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.util.forEach
+import androidx.core.util.remove
+import com.ooftf.basic.utils.toast
 import com.ooftf.fake.myapplication.UnitParser
 import com.ooftf.marionette.lp.LayoutParamsParserManager
+import org.json.JSONArray
 import org.json.JSONObject
 import java.util.regex.Pattern
 
@@ -18,15 +22,37 @@ abstract class BaseNode<T : View>(val context: NodeContext) : INode {
     var mBinder = Binder()
     override fun parse(parent: ViewGroup?, json: JSONObject): View {
         data = json
-        var result = createView()
+        val result = createView()
         view = result
         if(json.has("layout")){
-            var layout = json.getJSONObject("layout")
+            val layout = json.getJSONObject("layout")
             handleAttrs(result, layout)
             handleLayoutParams(result, parent, layout)
         }
+        if(json.has("events")){
+            handleEvents(json.getJSONArray("events"))
+        }
+
         handleChildren(json)
         return result
+    }
+
+    private fun handleEvents(jsonArray: JSONArray) {
+        (0 until jsonArray.length()).forEach {
+            val item = jsonArray.getJSONObject(it)
+            val trigger = item.getString("trigger")
+            val action = item.getString("action")
+            var params = if(item.has("params")){
+                item.getJSONObject("params")
+            }else{
+                JSONObject()
+            }
+            if(trigger == "click"){
+                view?.setOnClickListener {
+                    context.dispatchEvent(action,params)
+                }
+            }
+        }
     }
 
     override fun getBinder(): Binder {
@@ -64,7 +90,21 @@ abstract class BaseNode<T : View>(val context: NodeContext) : INode {
     open fun handleAttrs(view: T, layout: JSONObject) {
         if(layout.has("background-color")){
             val background = layout.getString("background-color")
-            view.setBackgroundColor(Color.parseColor(background))
+            if(layout.has("radius")){
+                val radius = layout.getJSONArray("radius")
+                val bg = GradientDrawable()
+                bg.setColor(Color.parseColor(background))
+                val topLeft = UnitParser.stringToPxFloat(radius.getString(0))
+                val topRight = UnitParser.stringToPxFloat(radius.getString(1))
+                val bottomRight = UnitParser.stringToPxFloat(radius.getString(2))
+                val bottomLeft = UnitParser.stringToPxFloat(radius.getString(3))
+                bg.cornerRadii = floatArrayOf(topLeft, topLeft, topRight, topRight,
+                    bottomRight, bottomRight, bottomLeft, bottomLeft)
+                view.background = bg
+            }else{
+                view.setBackgroundColor(Color.parseColor(background))
+            }
+
         }
         if(layout.has("padding")){
             val paddings = layout.getJSONArray("padding")
@@ -119,7 +159,7 @@ abstract class BaseNode<T : View>(val context: NodeContext) : INode {
         }
     }
 
-    override fun setParentNode(parent: INode) {
+    override fun setParentNode(parent: INode?) {
         this.parent = parent
     }
 
@@ -127,14 +167,14 @@ abstract class BaseNode<T : View>(val context: NodeContext) : INode {
         return Pattern.matches("@\\{.*\\}",value)
     }
 
-    fun getName(value:String):String{
+    fun getExpressionValue(value:String):String{
         return value.subSequence(2,value.length-1).toString()
     }
     fun handleAttr(json:JSONObject, key:String, action:(String)->Unit){
         if(json.has(key)){
             val value = json.getString(key)
             if(isExpression(value)){
-                getBinder().put(getName(value),action)
+                getBinder().put(getExpressionValue(value),action)
             }else{
                 action.invoke(value)
             }
@@ -146,5 +186,23 @@ abstract class BaseNode<T : View>(val context: NodeContext) : INode {
         getChildNode().forEach { _, node ->
             node.injectField(key,value)
         }
+    }
+
+    override fun addChildNode(position: Int, child: INode) {
+        childNodeRenders.put(position,child)
+        child.setParentNode(this)
+    }
+
+    override fun removeChildNode(position: Int,child: INode) {
+       if( childNodeRenders.remove(position,child)){
+           child.setParentNode(null)
+       }
+    }
+
+    fun clear(){
+        view = null
+        data = null
+        childNodeRenders.clear()
+        mBinder.clear()
     }
 }
