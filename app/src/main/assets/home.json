@@ -77,12 +77,20 @@
             "10"
           ],
           "margin": [
-            "10","10","10","10"
+            "10",
+            "10",
+            "10",
+            "10"
           ],
           "orientation": "vertical",
           "gravity": "center_horizontal",
           "background-color": "#FFFFFF",
-          "radius": ["10","10","10","10"]
+          "radius": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
         },
         "children": [
           {
@@ -283,7 +291,7 @@
         }
       ]
     },
-    "sticky":  {
+    "sticky": {
       "type": "TabLayout",
       "id": "tab_layout",
       "layout": {
@@ -300,7 +308,7 @@
         "回收"
       ]
     },
-    "body":       {
+    "body": {
       "type": "TabContent",
       "tabLayoutId": "tab_layout",
       "id": "tab_content",
@@ -522,6 +530,8 @@
         },
         {
           "type": "RecyclerView",
+          "refresh": "true",
+          "loadMore": "true",
           "layout": {
             "width": "match_parent",
             "height": "match_parent",

@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.util.forEach
 import androidx.core.util.remove
-import com.ooftf.basic.utils.toast
 import com.ooftf.fake.myapplication.UnitParser
 import com.ooftf.marionette.lp.LayoutParamsParserManager
+import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import org.json.JSONArray
 import org.json.JSONObject
 import java.util.regex.Pattern
@@ -20,21 +20,57 @@ abstract class BaseNode<T : View>(val context: NodeContext) : INode {
     var childNodeRenders = SparseArray<INode>()
     var parent : INode? = null
     var mBinder = Binder()
+    var refreshLayout:SmartRefreshLayout?=null
     override fun parse(parent: ViewGroup?, json: JSONObject): View {
         data = json
-        val result = createView()
-        view = result
-        if(json.has("layout")){
-            val layout = json.getJSONObject("layout")
-            handleAttrs(result, layout)
-            handleLayoutParams(result, parent, layout)
+        view = createView()
+        var result:View = view!!
+        view?.let { view->
+            if(json.has("layout")){
+                val layout = json.getJSONObject("layout")
+                handleLayoutAttrs(view, layout)
+                handleLayoutParams(result, parent, layout)
+            }
+
         }
+
         if(json.has("events")){
             handleEvents(json.getJSONArray("events"))
         }
 
         handleChildren(json)
+        handleAttrs(view!!,json)
+        if(json.has("refresh")|| json.has("loadMore")){
+            val smart = SmartRefreshLayout(context.context)
+            refreshLayout = smart
+            result.layoutParams?.let {
+                smart.layoutParams = ViewGroup.LayoutParams(it.width,it.height)
+            }
+            smart.addView(result)
+            result = smart
+            if(json.has("refresh")){
+                smart.setEnableRefresh(json.getBoolean("refresh"))
+            }else{
+                smart.setEnableRefresh(false)
+            }
+            if(json.has("loadMore")){
+                smart.setEnableLoadMore(json.getBoolean("loadMore"))
+            }else{
+                smart.setEnableLoadMore(false)
+            }
+
+            smart.setOnLoadMoreListener {
+                TODO("实现全局事件监听")
+            }
+            smart.setOnRefreshListener {
+                TODO("实现全局事件监听")
+            }
+        }
         return result
+    }
+
+    protected open fun handleAttrs(view: T, json: JSONObject) {
+
     }
 
     private fun handleEvents(jsonArray: JSONArray) {
@@ -87,7 +123,7 @@ abstract class BaseNode<T : View>(val context: NodeContext) : INode {
         return childNodeRenders
     }
 
-    open fun handleAttrs(view: T, layout: JSONObject) {
+    open fun handleLayoutAttrs(view: T, layout: JSONObject) {
         if(layout.has("background-color")){
             val background = layout.getString("background-color")
             if(layout.has("radius")){

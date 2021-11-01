@@ -1,0 +1,417 @@
+"children": [
+{
+"type": "Banner",
+"layout": {
+"width": "match_parent",
+"height": "360"
+},
+"children": [
+{
+"templateId": "234",
+"field": {
+"url": "https://img.zcool.cn/community/01c06a5938c8c0a8012193a3c71da5.jpg@2o.jpg"
+}
+},
+{
+"templateId": "234",
+"field": {
+"url": "https://img.zcool.cn/community/017b2a5938c8bca8012193a37db72c.jpg"
+}
+},
+{
+"templateId": "234",
+"field": {
+"url": "https://img.zcool.cn/community/01c06a5938c8c0a8012193a3c71da5.jpg@2o.jpg"
+}
+},
+{
+"templateId": "234",
+"field": {
+"url": "https://img.zcool.cn/community/017b2a5938c8bca8012193a37db72c.jpg"
+}
+},
+{
+"templateId": "234",
+"field": {
+"url": "https://img.zcool.cn/community/01c06a5938c8c0a8012193a3c71da5.jpg@2o.jpg"
+}
+}
+]
+},
+{
+"type": "LinearLayout",
+"layout": {
+"width": "match_parent",
+"height": "300",
+"orientation": "horizontal"
+},
+"children": [
+{
+"type": "LinearLayout",
+"layout": {
+"width": "0",
+"weight": "1",
+"height": "match_parent",
+"orientation": "vertical"
+},
+"children": [
+{
+"type": "TextView",
+"layout": {
+"width": "match_parent",
+"weight": "1",
+"height": "0",
+"gravity": "center",
+"background-color": "#994422",
+"text": "left top",
+"textColor": "#FFFFFF",
+"textSize": "20"
+}
+},
+{
+"type": "TextView",
+"layout": {
+"width": "match_parent",
+"weight": "1",
+"height": "0",
+"gravity": "center",
+"background-color": "#223399",
+"text": "left bottom",
+"textColor": "#FFFFFF",
+"textSize": "20"
+}
+}
+]
+},
+{
+"type": "TextView",
+"layout": {
+"width": "0",
+"weight": "1",
+"height": "match_parent",
+"gravity": "center",
+"background-color": "#ff0000",
+"text": "right",
+"textColor": "#FFFFFF",
+"textSize": "33"
+}
+}
+]
+},
+{
+"type": "TabLayout",
+"id": "tab_layout",
+"layout": {
+"background-color": "#ffffff",
+"textColor": "#666666",
+"selectedTextColor": "#333333"
+},
+"items": [
+"我的",
+"收藏",
+"热门",
+"最新",
+"个人",
+"回收"
+]
+},
+{
+"type": "TabContent",
+"tabLayoutId": "tab_layout",
+"id": "tab_content",
+"layout": {
+"width": "match_parent",
+"height": "match_parent",
+"background-color": "#02034f"
+},
+"children": [
+{
+"type": "RecyclerView",
+"layout": {
+"width": "match_parent",
+"height": "match_parent",
+"background-color": "#ffffff"
+},
+"children": [
+{
+"templateId": "2313",
+"field": {
+"title": "第一个"
+}
+},
+{
+"templateId": "2313",
+"field": {
+"title": "第二个"
+}
+},
+{
+"templateId": "2313",
+"field": {
+"title": "第三个"
+}
+},
+{
+"templateId": "2314",
+"field": {
+"url": "https://img.zcool.cn/community/017b2a5938c8bca8012193a37db72c.jpg"
+}
+},
+{
+"templateId": "2313",
+"field": {
+"title": "第四个"
+}
+},
+{
+"templateId": "2313",
+"field": {
+"title": "第五个"
+}
+},
+{
+"templateId": "2314",
+"field": {
+"url": "https://img.zcool.cn/community/01c06a5938c8c0a8012193a3c71da5.jpg@2o.jpg"
+}
+},
+{
+"templateId": "2222",
+"field": {
+"icon": "https://img.zcool.cn/community/01985a593aadbba8012193a359969e.jpg@1280w_1l_2o_100sh.jpg",
+"content": "这是内容描述"
+}
+},
+{
+"templateId": "2313",
+"field": {
+"title": "第6个"
+}
+},
+{
+"templateId": "2313",
+"field": {
+"title": "第7个"
+}
+},
+{
+"templateId": "2314",
+"field": {
+"url": "https://img.zcool.cn/community/01c06a5938c8c0a8012193a3c71da5.jpg@2o.jpg"
+}
+}
+]
+},
+{
+"id": "item_tabContent_1",
+"type": "Waterfall",
+"layout": {
+"background-color": "#ffffff",
+"width": "match_parent",
+"height": "match_parent"
+},
+"children": [
+{
+"templateId": "3333",
+"field": {
+"icon": "https://gw.alicdn.com/bao/upload/O1CN01xhCcWs1VKsLaLDeSx_!!6000000002635-0-yinhe.jpg_Q75.jpg_.webp",
+"content": "OPPO A11s 8+128G  "
+}
+},
+{
+"templateId": "3333",
+"field": {
+"icon": "https://picasso.alicdn.com/imgextra/O1CNA1J5ZeAb1eG8nLuW6iX_!!3697853843-0-psf.jpg_240x240Q90.jpg",
+"content": "5000mAh大电池 18W疾速快充 90Hz护眼"
+}
+},
+{
+"templateId": "3333",
+"field": {
+"icon": "https://gw.alicdn.com/bao/upload/O1CN014e3LCu1f96K9gOaOu_!!6000000003963-0-yinhe.jpg_Q75.jpg_.webp",
+"content": "OPPO K9 8+128GB 幻彩之翼"
+}
+},
+{
+"templateId": "3333",
+"field": {
+"icon": "https://img.alicdn.com/imgextra/i3/92042735/O1CN01IPUtmQ1W4fsQ7MubX-92042735.jpg",
+"content": "磨砂黑 超大存储"
+}
+},
+{
+"templateId": "3333",
+"field": {
+"icon": "https://img.alicdn.com/imgextra/i1/2207239419714/O1CN01sR8VIS2Ld44O2kRua_!!2207239419714.png",
+"content": " 高通骁龙768G 65W超级闪充 90Hz OLED电竞屏"
+}
+},
+{
+"templateId": "3333",
+"field": {
+"icon": "https://img.alicdn.com/imgextra/i4/2207239419714/O1CN01rWK9da2Ld46CgKbdv_!!2207239419714.jpg_430x430q90.jpg",
+"content": "Redmi 9A 5000mAh大电量 1300万AI相机 八核处理器 人脸解锁 4GB+64GB 砂石黑"
+}
+},
+{
+"templateId": "3333",
+"field": {
+"icon": "https://img.alicdn.com/imgextra/i3/92042735/O1CN01IPUtmQ1W4fsQ7MubX-92042735.jpg",
+"content": "华为（HUAWEI）nova 8 SE 活力版 40W华为超级快充 6.6英寸无界全视屏"
+}
+},
+{
+"templateId": "3333",
+"field": {
+"icon": "https://img.alicdn.com/imgextra/i1/346761511/TB2jxRAfilnpuFjSZFgXXbi7FXa_!!346761511-0-beehive-scenes.jpg_300x300.jpg",
+"content": "荣耀Play5T Pro 6400万双摄 6.6英寸全视屏 22.5W超级快充 4000mAh大电池 全网"
+}
+},
+{
+"templateId": "3333",
+"field": {
+"icon": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic15.nipic.com%2F20110629%2F1369025_015339341000_2.jpg&refer=http%3A%2F%2Fpic15.nipic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1638103479&t=5ee43c93ec1a1cbea5d3266521582b66",
+"content": "Redmi K40 骁龙870 三星AMOLED 120Hz高刷直屏 4800万高清三摄 12GB+256GB"
+}
+},
+{
+"templateId": "3333",
+"field": {
+"icon": "https://img.alicdn.com/imgextra/i1/346761511/TB2jxRAfilnpuFjSZFgXXbi7FXa_!!346761511-0-beehive-scenes.jpg_300x300.jpg",
+"content": "迪士尼 Disney 童装儿童男童羽绒服连帽轻薄中大童短款90白鸭绒保暖反"
+}
+},
+{
+"templateId": "3333",
+"field": {
+"icon": "https://img0.baidu.com/it/u=2510891666,2454567058&fm=26&fmt=auto",
+"content": "最好的衣服8"
+}
+},
+{
+"templateId": "3333",
+"field": {
+"icon": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2Fsj03%2F210FQ355461P6-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1638103392&t=85e96234a5fbb7e6456e6512f8afd244",
+"content": "布丁鱼 童装男童外套儿童冲锋衣男女童冬装2021洋气可拆卸三合一秋冬款户外加绒"
+}
+},
+{
+"templateId": "3333",
+"field": {
+"icon": "https://img1.baidu.com/it/u=2245002466,2368453377&fm=26&fmt=auto",
+"content": "2021春秋加绒中大童新款洋气女孩秋季三合一防风"
+}
+},
+{
+"templateId": "3333",
+"field": {
+"icon": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.yzcdn.cn%2Fupload_files%2F2018%2F08%2F05%2FFpptkAbI53xGC32xaP_-NG-xFBg9.jpg%3FimageView2%2F2%2Fw%2F580%2Fh%2F580%2Fq%2F75%2Fformat%2Fjpg&refer=http%3A%2F%2Fimg.yzcdn.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1638103163&t=384bcee39ec331b4ffec390c3349cbd4",
+"content": "开米熊童装女童冲锋衣儿童外套"
+}
+}
+]
+},
+{
+"id": "item_tabContent_2",
+"type": "TextView",
+"layout": {
+"background-color": "#0000ff",
+"text": "tab2"
+}
+},
+{
+"id": "item_tabContent_3",
+"type": "TextView",
+"layout": {
+"background-color": "#0000ff",
+"text": "tab3"
+}
+},
+{
+"id": "item_tabContent_4",
+"type": "TextView",
+"layout": {
+"background-color": "#0000ff",
+"text": "tab4"
+}
+},
+{
+"type": "RecyclerView",
+"layout": {
+"width": "match_parent",
+"height": "match_parent",
+"background-color": "#ffffff"
+},
+"children": [
+{
+"templateId": "2313",
+"field": {
+"title": "第一个"
+}
+},
+{
+"templateId": "2313",
+"field": {
+"title": "第二个"
+}
+},
+{
+"templateId": "2313",
+"field": {
+"title": "第三个"
+}
+},
+{
+"templateId": "2314",
+"field": {
+"url": "https://img.zcool.cn/community/017b2a5938c8bca8012193a37db72c.jpg"
+}
+},
+{
+"templateId": "2313",
+"field": {
+"title": "第四个"
+}
+},
+{
+"templateId": "2313",
+"field": {
+"title": "第五个"
+}
+},
+{
+"templateId": "2314",
+"field": {
+"url": "https://img.zcool.cn/community/01c06a5938c8c0a8012193a3c71da5.jpg@2o.jpg"
+}
+},
+{
+"templateId": "2222",
+"field": {
+"icon": "https://img.zcool.cn/community/01985a593aadbba8012193a359969e.jpg@1280w_1l_2o_100sh.jpg",
+"content": "这是内容描述"
+}
+},
+{
+"templateId": "2313",
+"field": {
+"title": "第6个"
+}
+},
+{
+"templateId": "2313",
+"field": {
+"title": "第7个"
+}
+},
+{
+"templateId": "2314",
+"field": {
+"url": "https://img.zcool.cn/community/01c06a5938c8c0a8012193a3c71da5.jpg@2o.jpg"
+}
+}
+]
+}
+]
+}
+]

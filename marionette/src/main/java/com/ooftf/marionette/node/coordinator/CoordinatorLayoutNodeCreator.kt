@@ -1,11 +1,11 @@
-package com.ooftf.marionette.node.view
+package com.ooftf.marionette.node.coordinator
 
 import com.ooftf.marionette.node.INode
 import com.ooftf.marionette.node.INodeCreator
 import com.ooftf.marionette.node.NodeContext
 
-class ViewNodeRenderCreator: INodeCreator {
+class CoordinatorLayoutNodeCreator:INodeCreator {
     override fun createRender(context: NodeContext): INode {
-        return ViewNode(context)
+        return CoordinatorLayoutNode(context)
     }
 }

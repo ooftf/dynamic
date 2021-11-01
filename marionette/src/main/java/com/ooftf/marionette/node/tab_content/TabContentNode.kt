@@ -16,24 +16,21 @@ class TabContentNode(context: NodeContext) : BaseNode<ViewPager2>(context) {
         return ViewPager2(context.context)
     }
 
-    override fun parse(parent: ViewGroup?, json: JSONObject): View {
-        val view = super.parse(parent, json)
 
+    override fun handleAttrs(view: ViewPager2, json: JSONObject) {
+        super.handleAttrs(view, json)
         if(json.has("tabLayoutId")){
-           val  tabLayoutId = json.getString("tabLayoutId")
+            val  tabLayoutId = json.getString("tabLayoutId")
             context.findNodeRenderById(tabLayoutId)?.let {
                 val tabLayout = it.getTargetView()
                 if(tabLayout is TabLayout){
                     TabLayoutMediator(tabLayout,this.view!!){tab,position->
-                       val items =  it.getModel()?.getJSONArray("items")
+                        val items =  it.getModel()?.getJSONArray("items")
                         tab.text =  items?.getString(position)
                     }.attach()
                 }
             }
-
-
         }
-        return view
     }
     override fun handleChildren(rootViewJsonObj: JSONObject) {
         view?.let {

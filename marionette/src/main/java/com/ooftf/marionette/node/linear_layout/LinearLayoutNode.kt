@@ -11,8 +11,8 @@ class LinearLayoutNode(context: NodeContext) :
     override fun createView(): LinearLayout {
         return LinearLayout(context.context)
     }
-    override fun handleAttrs(view: LinearLayout, layout: JSONObject) {
-        super.handleAttrs(view, layout)
+    override fun handleLayoutAttrs(view: LinearLayout, layout: JSONObject) {
+        super.handleLayoutAttrs(view, layout)
         if(layout.has("orientation")){
             when(layout.getString("orientation")){
                 "horizontal"->view.orientation = LinearLayout.HORIZONTAL

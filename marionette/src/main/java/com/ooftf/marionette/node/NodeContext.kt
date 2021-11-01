@@ -28,17 +28,16 @@ class NodeContext(val context: Context) {
     val eventHandles = HashMap<String, (JSONObject)->Unit>()
     val templateMap = SparseArray<Template>()
     init {
-        registerNodeRenderCreator("LinearLayout", LinearLayoutNodeCreator())
-        registerNodeRenderCreator("TextView", TextNodeCreator())
-        registerNodeRenderCreator("View", ViewNodeCreator())
-        registerNodeRenderCreator("TabLayout", TabLayoutCreator())
-        registerNodeRenderCreator("TabContent", TabContentNodeCreator())
-        registerNodeRenderCreator("RecyclerView", RecyclerViewNodeCreator())
-        registerNodeRenderCreator("ImageView", ImageNodeCreator())
-        registerNodeRenderCreator("Banner", BannerNodeCreator())
-        registerNodeRenderCreator("Waterfall", WaterfallNodeCreator())
-        registerNodeRenderCreator("CoordinatorLayout", CoordinatorLayoutNodeCreator())
-
+        registerNodeCreator("LinearLayout", LinearLayoutNodeCreator())
+        registerNodeCreator("TextView", TextNodeCreator())
+        registerNodeCreator("View", ViewNodeCreator())
+        registerNodeCreator("TabLayout", TabLayoutCreator())
+        registerNodeCreator("TabContent", TabContentNodeCreator())
+        registerNodeCreator("RecyclerView", RecyclerViewNodeCreator())
+        registerNodeCreator("ImageView", ImageNodeCreator())
+        registerNodeCreator("Banner", BannerNodeCreator())
+        registerNodeCreator("Waterfall", WaterfallNodeCreator())
+        registerNodeCreator("CoordinatorLayout", CoordinatorLayoutNodeCreator())
 
         eventHandles["openUrl"] = {
             val url = it.getString("url")
@@ -76,17 +75,15 @@ class NodeContext(val context: Context) {
            val template = Template(templates.getJSONObject(it),this)
             templateMap.put(template.id,template)
         }
-
         val viewData  = data.getJSONObject("view")
         val type = viewData.getString("type")
         val nodeRender = createNodeRenderByType(type)
         rootNode = nodeRender
         return nodeRender.parse(parent,viewData)
-
     }
 
 
-    fun registerNodeRenderCreator(key: String, creator: INodeCreator) {
+    fun registerNodeCreator(key: String, creator: INodeCreator) {
         nodeRenderCreatorMap.put(key, creator)
     }
 

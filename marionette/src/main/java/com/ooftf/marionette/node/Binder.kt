@@ -19,4 +19,8 @@ class Binder {
     fun put(key:String,action:(String)->Unit){
         map.put(key,action)
     }
+
+    fun clear(){
+        map.clear()
+    }
 }

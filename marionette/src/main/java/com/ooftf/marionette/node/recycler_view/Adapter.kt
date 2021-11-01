@@ -7,7 +7,7 @@ import com.ooftf.marionette.node.INode
 import com.ooftf.marionette.node.NodeContext
 import org.json.JSONArray
 
-class Adapter(val context:NodeContext, val data:JSONArray): RecyclerView.Adapter<ViewHolder>() {
+class Adapter(val context:NodeContext, val data:JSONArray,val recyclerNode:INode): RecyclerView.Adapter<ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val node = context.findTemplateById(viewType).createView(parent)
         return ViewHolder(node.getTargetView()!!,node)
@@ -28,6 +28,16 @@ class Adapter(val context:NodeContext, val data:JSONArray): RecyclerView.Adapter
         return data.getJSONObject(position).getInt("templateId")
     }
 
+    override fun onViewAttachedToWindow(holder: ViewHolder) {
+        super.onViewAttachedToWindow(holder)
+        recyclerNode.addChildNode(holder.bindingAdapterPosition,holder.node)
+    }
+
+    override fun onViewDetachedFromWindow(holder: ViewHolder) {
+        super.onViewDetachedFromWindow(holder)
+        recyclerNode.removeChildNode(holder.bindingAdapterPosition,holder.node)
+
+    }
 }
 
 class ViewHolder(itemView: View,val node:INode) : RecyclerView.ViewHolder(itemView) {

@@ -13,8 +13,8 @@ class TextNode(context: NodeContext) : BaseNode<TextView>(context) {
         return TextView(context.context)
     }
 
-    override fun handleAttrs(view: TextView, layout: JSONObject) {
-        super.handleAttrs(view, layout)
+    override fun handleLayoutAttrs(view: TextView, layout: JSONObject) {
+        super.handleLayoutAttrs(view, layout)
         handleAttr(layout,"text"){
             view.text = it
         }
