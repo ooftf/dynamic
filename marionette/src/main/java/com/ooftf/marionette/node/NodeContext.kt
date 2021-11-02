@@ -50,7 +50,7 @@ class NodeContext(val context: Context) {
         }
     }
 
-    fun registerEventHandle(action:String,handler:(JSONObject)->Unit){
+    fun registerEventHandler(action:String,handler:(JSONObject)->Unit){
         eventHandles[action] = handler
     }
     fun findNodeById(id: String): INode? {
