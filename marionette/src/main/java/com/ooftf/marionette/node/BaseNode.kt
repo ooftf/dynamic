@@ -187,7 +187,7 @@ abstract class BaseNode<T : View>(val context: NodeContext) : INode {
         val parent = view as ViewGroup
         (0 until children.length()).forEach {
             val childrenData = children.getJSONObject(it)
-            val nodeRender = context.createNodeRenderByType(childrenData.getString("type"))
+            val nodeRender = context.createNodeByType(childrenData.getString("type"))
             nodeRender.setParentNode(this)
             childNodeRenders.put(it,nodeRender)
             val childrenView = nodeRender.parse(parent,childrenData)

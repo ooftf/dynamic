@@ -10,7 +10,7 @@ class Template(val data:JSONObject,val context:NodeContext) {
     fun createView(parent:ViewGroup?):INode{
         val viewJson = data.getJSONObject("view")
         val type = viewJson.getString("type")
-        val node = context.createNodeRenderByType(type)
+        val node = context.createNodeByType(type)
         node.parse(parent,viewJson)
         return node
     }

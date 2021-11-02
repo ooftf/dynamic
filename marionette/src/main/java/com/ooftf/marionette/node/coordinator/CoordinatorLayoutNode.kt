@@ -1,7 +1,5 @@
 package com.ooftf.marionette.node.coordinator
 
-import android.view.View
-import android.view.ViewGroup
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.android.material.appbar.AppBarLayout
 import com.ooftf.marionette.node.BaseNode
@@ -28,7 +26,7 @@ class CoordinatorLayoutNode(context: NodeContext) : BaseNode<CoordinatorLayout>(
         //lp.behavior = AppBarLayout.Behavior()
         if (json.has("header")) {
             val header = json.getJSONObject("header")
-            val node = context.createNodeRenderByType(header.getString("type"))
+            val node = context.createNodeByType(header.getString("type"))
             addChildNode(0, node)
             val headView = node.parse(appBarLayout, header)
             appBarLayout.addView(headView)
@@ -37,7 +35,7 @@ class CoordinatorLayoutNode(context: NodeContext) : BaseNode<CoordinatorLayout>(
         }
         if (json.has("sticky")) {
             val sticky = json.getJSONObject("sticky")
-            val node = context.createNodeRenderByType(sticky.getString("type"))
+            val node = context.createNodeByType(sticky.getString("type"))
             addChildNode(1, node)
             val stickyView = node.parse(appBarLayout, sticky)
             appBarLayout.addView(stickyView)
@@ -46,7 +44,7 @@ class CoordinatorLayoutNode(context: NodeContext) : BaseNode<CoordinatorLayout>(
         }
         if (json.has("body")) {
             val body = json.getJSONObject("body")
-            val node = context.createNodeRenderByType(body.getString("type"))
+            val node = context.createNodeByType(body.getString("type"))
             addChildNode(2, node)
             val bodyView = node.parse(coordinator, body)
             coordinator.addView(bodyView)

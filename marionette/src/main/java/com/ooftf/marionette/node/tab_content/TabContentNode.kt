@@ -1,7 +1,5 @@
 package com.ooftf.marionette.node.tab_content
 
-import android.view.View
-import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -21,7 +19,7 @@ class TabContentNode(context: NodeContext) : BaseNode<ViewPager2>(context) {
         super.handleAttrs(view, json)
         if(json.has("tabLayoutId")){
             val  tabLayoutId = json.getString("tabLayoutId")
-            context.findNodeRenderById(tabLayoutId)?.let {
+            context.findNodeById(tabLayoutId)?.let {
                 val tabLayout = it.getTargetView()
                 if(tabLayout is TabLayout){
                     TabLayoutMediator(tabLayout,this.view!!){tab,position->

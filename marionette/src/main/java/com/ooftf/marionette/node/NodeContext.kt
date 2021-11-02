@@ -24,7 +24,7 @@ import org.json.JSONObject
 // 每个 fragment 对应一个 NodeRenderContext 实例？ 这个还没想好
 class NodeContext(val context: Context) {
     var rootNode: INode? = null
-    val nodeRenderCreatorMap = HashMap<String, INodeCreator>()
+    val nodeCreatorMap = HashMap<String, INodeCreator>()
     val eventHandles = HashMap<String, (JSONObject)->Unit>()
     val templateMap = SparseArray<Template>()
     init {
@@ -53,13 +53,13 @@ class NodeContext(val context: Context) {
     fun registerEventHandle(action:String,handler:(JSONObject)->Unit){
         eventHandles[action] = handler
     }
-    fun findNodeRenderById(id: String): INode? {
+    fun findNodeById(id: String): INode? {
         return rootNode?.findNodeRenderById(id)
     }
 
-    fun createNodeRenderByType(key: String): INode {
-        Log.e("createNodeRenderByType","${ key}:: ${nodeRenderCreatorMap[key].toString()}")
-        return nodeRenderCreatorMap[key]?.createRender(this)?: ViewNode(this)
+    fun createNodeByType(key: String): INode {
+        Log.e("createNodeRenderByType","${ key}:: ${nodeCreatorMap[key].toString()}")
+        return nodeCreatorMap[key]?.createRender(this)?: ViewNode(this)
     }
 
     fun findTemplateById(id:Int): Template {
@@ -77,14 +77,14 @@ class NodeContext(val context: Context) {
         }
         val viewData  = data.getJSONObject("view")
         val type = viewData.getString("type")
-        val nodeRender = createNodeRenderByType(type)
+        val nodeRender = createNodeByType(type)
         rootNode = nodeRender
         return nodeRender.parse(parent,viewData)
     }
 
 
     fun registerNodeCreator(key: String, creator: INodeCreator) {
-        nodeRenderCreatorMap.put(key, creator)
+        nodeCreatorMap.put(key, creator)
     }
 
     fun dispatchEvent(action:String,params:JSONObject){
