@@ -1,0 +1,134 @@
+{
+  "hierarchy": {
+    "root": "rootNode",
+    "structure": {
+      "rootNode": [
+        "banner",
+        "tabLayout",
+        "tabContent"
+      ],
+      "tabLayout": [
+        "tabLayout_tab"
+      ],
+      "tabContent": [
+        "tabContent_0",
+        "tabContent_1",
+        "tabContent_2",
+        "tabContent_3"
+      ],
+      "tabContent_0": [
+        "tabContent_0_item_0",
+        "tabContent_0_item_1",
+        "tabContent_0_item_2",
+        "tabContent_0_item_3",
+        "tabContent_0_item_4"
+      ]
+    }
+  },
+  "data": {
+    "tabLayout": {
+      "id": "tabLayout",
+      "type": "sticky"
+    },
+    "tabLayout_tab": {
+      "id": "tabLayout_tab",
+      "templateId": "AssistantCardList_mapV2",
+      "version": "20",
+      "fields": {
+        "items": [
+          {
+            "label": "推荐",
+            "labelColor": "#888888",
+            "selectedColor": "#333333"
+          },
+          {
+            "label": "人文",
+            "labelColor": "#888888",
+            "selectedColor": "#333333"
+          },
+          {
+            "label": "自然",
+            "labelColor": "#888888",
+            "selectedColor": "#333333"
+          },
+          {
+            "label": "摄影",
+            "labelColor": "#888888",
+            "selectedColor": "#333333"
+          }
+        ]
+      }
+    },
+    "tabContent": {
+      "id": "tabContent",
+      "type": "tabContent"
+    },
+    "tabContent_0": {
+      "id": "tabContent_0",
+      "type": "waterfall",
+      "fields": {
+      },
+      "layout": {
+        "padding": [
+          "10",
+          "10",
+          "10",
+          "10"
+        ]
+      }
+    },
+    "tabContent_0_item_0": {
+      "id": "tabContent_0_item_0",
+      "templateId": "AssistantCardList_assistantTip",
+      "version": "27",
+      "fields": {
+        "blockId": "margin_none_radius_none",
+        "cardInfo": "[{\"data\":{\"leftIcon\":{\"mediaUrl\":\"A*Z42lSbaKUTgAAAAAAAAAAAAADmx1AQ\",\"placeholder\":\"https://gw.alipayobjects.com/zos/mwalletmng/NbpflhINoTlwfrPMlgxy.png\",\"type\":\"lottie\",\"variableLottie\":\"true\",\"repeatCount\":\"-1\",\"extInfo\":{\"lottieBizId\":\"VATODO_MaYiIcon\",\"lottieScene\":\"VATODO_MaYiIcon\"}},\"carousel\":{\"items\":[{\"data\":{\"text\":\"这里可以发现附近的服务～\"},\"countdown\":{\"endText\":\"这里可以发现附近的服务～\",\"targetTime\":\"0\",\"order\":\"reverse\"}}]}},\"templateId\":\"AssistantCardList_assistantTip\",\"templateVersion\":27}]"
+      }
+    },
+    "banner": {
+      "id": "banner",
+      "templateId": "AssistantCardList_weatherSpread",
+      "version": "4",
+      "fields": {
+        "blockId": "margin_none_radius_none",
+        "cardInfo": "[{\"data\":{\"defaultSpreadStatus\":2,\"richTitle\":\"<span style=color:#ffffff>10月13日 星期三</span>\",\"detail\":{\"tip\":{\"tipItems\":[{\"dressDesc\":\"穿衣指数\",\"dressTitle\":\"单衣\",\"iconUrl\":\"https://gw.alipayobjects.com/mdn/rms_d6bcc0/afts/img/A*_IOdRamXg48AAAAAAAAAAAAAARQnAQ\"},{\"dressDesc\":\"感冒指数\",\"dressTitle\":\"极易发\",\"iconUrl\":\"https://gw.alipayobjects.com/mdn/rms_d6bcc0/afts/img/A*bUETQL9OX2cAAAAAAAAAAAAAARQnAQ\"},{\"dressDesc\":\"紫外线指数\",\"dressTitle\":\"弱\",\"iconUrl\":\"https://gw.alipayobjects.com/mdn/rms_d6bcc0/afts/img/A*Vu-zTohHLB0AAAAAAAAAAAAAARQnAQ\"},{\"dressDesc\":\"交通指数\",\"dressTitle\":\"限行2和7\",\"iconUrl\":\"https://gw.alipayobjects.com/mdn/rms_d6bcc0/afts/img/A*Zp-QT5LUmkoAAAAAAAAAAAAAARQnAQ\"}],\"column\":4},\"temperatureItems\":[{\"maxTemperature\":\"18\",\"minTemperature\":\"11\",\"iconUrl\":\"https://gw.alipayobjects.com/mdn/rms_d6bcc0/afts/img/A*gTKkQJ42bNsAAAAAAAAAAAAAARQnAQ\",\"dateDesc\":\"今天\"},{\"maxTemperature\":\"19\",\"minTemperature\":\"10\",\"iconUrl\":\"https://gw.alipayobjects.com/mdn/rms_d6bcc0/afts/img/A*gTKkQJ42bNsAAAAAAAAAAAAAARQnAQ\",\"dateDesc\":\"周四\"},{\"maxTemperature\":\"19\",\"minTemperature\":\"6\",\"iconUrl\":\"https://gw.alipayobjects.com/mdn/rms_d6bcc0/afts/img/A*EjDeT7_wieYAAAAAAAAAAAAAARQnAQ\",\"dateDesc\":\"周五\"},{\"maxTemperature\":\"13\",\"minTemperature\":\"2\",\"iconUrl\":\"https://gw.alipayobjects.com/mdn/rms_d6bcc0/afts/img/A*EjDeT7_wieYAAAAAAAAAAAAAARQnAQ\",\"dateDesc\":\"周六\"},{\"maxTemperature\":\"13\",\"minTemperature\":\"2\",\"iconUrl\":\"https://gw.alipayobjects.com/mdn/rms_d6bcc0/afts/img/A*EjDeT7_wieYAAAAAAAAAAAAAARQnAQ\",\"dateDesc\":\"周日\"},{\"maxTemperature\":\"15\",\"minTemperature\":\"4\",\"iconUrl\":\"https://gw.alipayobjects.com/mdn/rms_d6bcc0/afts/img/A*EjDeT7_wieYAAAAAAAAAAAAAARQnAQ\",\"dateDesc\":\"周一\"},{\"maxTemperature\":\"14\",\"minTemperature\":\"2\",\"iconUrl\":\"https://gw.alipayobjects.com/mdn/rms_d6bcc0/afts/img/A*EjDeT7_wieYAAAAAAAAAAAAAARQnAQ\",\"dateDesc\":\"周二\"}]},\"desc\":\"北京市 11℃-18℃ 多云\"},\"templateId\":\"AssistantCardList_weatherSpread\",\"templateVersion\":4}]"
+      }
+    }
+  },
+  "container": [
+    {
+      "type": "cube",
+      "id": "AssistantCardList_mapV2",
+      "fileId": "A*RLPzQYKjujsAAAAAAAAAAAAADrh1AQ",
+      "version": "20",
+      "bizCode": "AssistantCardList",
+      "md5": "ee6eae286bfc8878a48fe9a5fbb7d58e",
+      "ext": "{\"TMPL_NEW_STATUS\":\"GRAY\",\"cardStructure\":\"{}\",\"TMPL_NEW_FLAG\":\"Y\",\"TMPL_NEW_PERCENTVAL\":\"0\"}"
+    },
+    {
+      "type": "cube",
+      "id": "AssistantCardList_assistantTip",
+      "fileId": "A*X_OsQbBEga4AAAAAAAAAAAAADrh1AQ",
+      "version": "27",
+      "bizCode": "AssistantCardList",
+      "md5": "8b18e2661f88f36f997457a59368e538",
+      "ext": "{\"TMPL_NEW_STATUS\":\"GRAY\",\"cardStructure\":\"{}\",\"TMPL_NEW_FLAG\":\"Y\",\"TMPL_NEW_PERCENTVAL\":\"0\"}"
+    },
+    {
+      "type": "cube",
+      "id": "AssistantCardList_weatherSpread",
+      "fileId": "A*RPhUSo7NiPEAAAAAAAAAAAAADrh1AQ",
+      "version": "4",
+      "bizCode": "AssistantCardList",
+      "md5": "9e9cdca7a8dedc847a10a34a73687478",
+      "ext": "{\"TMPL_NEW_STATUS\":\"GRAY\",\"cardStructure\":\"{}\",\"TMPL_NEW_FLAG\":\"Y\",\"TMPL_NEW_PERCENTVAL\":\"0\"}"
+    }
+  ],
+  "global": {
+  },
+  "endpoint": {
+    "protocolName": "native",
+    "protocolVersion": "1.0.0"
+  }
+}
