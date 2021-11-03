@@ -16,9 +16,18 @@ class WaterfallNode(context: NodeContext) : RecyclerViewNode(context) {
             }
         }
     }
-    override fun genLayoutManager(): RecyclerView.LayoutManager {
+    override fun genLayoutManager(recyclerView: RecyclerView): RecyclerView.LayoutManager {
         val layoutManager = StaggeredGridLayoutManager(spanCount,StaggeredGridLayoutManager.VERTICAL)
-        layoutManager.gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_NONE;
+
+        layoutManager.gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_NONE
+
+        recyclerView.addOnScrollListener(object :RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                layoutManager.invalidateSpanAssignments() //防止第一行到顶部有空白区域
+            }
+        })
+
         return layoutManager
     }
 }

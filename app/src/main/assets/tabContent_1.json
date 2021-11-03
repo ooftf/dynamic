@@ -1,0 +1,60 @@
+{
+  "hierarchy": {
+    "root": "root",
+    "structure": {
+      "root": [
+        "waterfall_frame"
+      ],
+      "waterfall_frame": [
+        "waterfall_frame_item_0",
+        "waterfall_frame_item_1",
+        "waterfall_frame_item_2",
+        "waterfall_frame_item_3",
+        "waterfall_frame_item_4",
+        "waterfall_frame_item_5",
+        "waterfall_frame_item_6",
+        "waterfall_frame_item_7",
+        "waterfall_frame_item_8",
+        "waterfall_frame_item_9"
+      ]
+    }
+  },
+  "data": {
+    "waterfall_frame_item_0": {
+      "id": "waterfall_frame_item_0",
+      "templateId": "AssistantCardList_assistantTip",
+      "version": "27",
+      "fields": {
+        "blockId": "margin_none_radius_none",
+        "cardInfo": "[{\"data\":{\"leftIcon\":{\"mediaUrl\":\"A*Z42lSbaKUTgAAAAAAAAAAAAADmx1AQ\",\"placeholder\":\"https://gw.alipayobjects.com/zos/mwalletmng/NbpflhINoTlwfrPMlgxy.png\",\"type\":\"lottie\",\"variableLottie\":\"true\",\"repeatCount\":\"-1\",\"extInfo\":{\"lottieBizId\":\"VATODO_MaYiIcon\",\"lottieScene\":\"VATODO_MaYiIcon\"}},\"carousel\":{\"items\":[{\"data\":{\"text\":\"这里可以发现附近的服务～\"},\"countdown\":{\"endText\":\"这里可以发现附近的服务～\",\"targetTime\":\"0\",\"order\":\"reverse\"}}]}},\"templateId\":\"AssistantCardList_assistantTip\",\"templateVersion\":27}]"
+      }
+    },
+    "waterfall_frame": {
+      "id": "waterfall_frame",
+      "layout": {
+        "type": "waterfall"
+      },
+      "position": "body",
+      "extendBlock": {
+        "hasMore": "true"
+      }
+    }
+  },
+  "container": [
+    {
+      "type": "cube",
+      "id": "AssistantCardList_assistantTip",
+      "fileId": "A*X_OsQbBEga4AAAAAAAAAAAAADrh1AQ",
+      "version": "27",
+      "bizCode": "AssistantCardList",
+      "md5": "8b18e2661f88f36f997457a59368e538",
+      "ext": "{\"TMPL_NEW_STATUS\":\"GRAY\",\"cardStructure\":\"{}\",\"TMPL_NEW_FLAG\":\"Y\",\"TMPL_NEW_PERCENTVAL\":\"0\"}"
+    }
+  ],
+  "global": {
+  },
+  "endpoint": {
+    "protocolName": "dynamic",
+    "protocolVersion": "1.0.0"
+  }
+}

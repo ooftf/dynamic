@@ -1,0 +1,91 @@
+{
+  "hierarchy": {
+    "delta": {
+      "opType": "insert",
+      "parent": "tabContent_0",
+      "position": "tabContent_0_item_4",
+      "target": [
+        "tabContent_0_item_5",
+        "tabContent_0_item_6",
+        "tabContent_0_item_7",
+        "tabContent_0_item_8",
+        "tabContent_0_item_9",
+        "tabContent_0_item_10"
+      ],
+      "hasMore": true
+    },
+    "data": {
+      "tabContent_0_item_5": {
+        "id": "tabContent_0_item_5",
+        "templateId": "AssistantCardList_assistantTip",
+        "version": "27",
+        "fields": {
+          "blockId": "margin_none_radius_none",
+          "cardInfo": "[{\"data\":{\"leftIcon\":{\"mediaUrl\":\"A*Z42lSbaKUTgAAAAAAAAAAAAADmx1AQ\",\"placeholder\":\"https://gw.alipayobjects.com/zos/mwalletmng/NbpflhINoTlwfrPMlgxy.png\",\"type\":\"lottie\",\"variableLottie\":\"true\",\"repeatCount\":\"-1\",\"extInfo\":{\"lottieBizId\":\"VATODO_MaYiIcon\",\"lottieScene\":\"VATODO_MaYiIcon\"}},\"carousel\":{\"items\":[{\"data\":{\"text\":\"这里可以发现附近的服务～\"},\"countdown\":{\"endText\":\"这里可以发现附近的服务～\",\"targetTime\":\"0\",\"order\":\"reverse\"}}]}},\"templateId\":\"AssistantCardList_assistantTip\",\"templateVersion\":27}]"
+        }
+      },
+      "tabContent_0_item_6": {
+        "id": "tabContent_0_item_6",
+        "templateId": "AssistantCardList_assistantTip",
+        "version": "27",
+        "fields": {
+          "blockId": "margin_none_radius_none",
+          "cardInfo": "[{\"data\":{\"leftIcon\":{\"mediaUrl\":\"A*Z42lSbaKUTgAAAAAAAAAAAAADmx1AQ\",\"placeholder\":\"https://gw.alipayobjects.com/zos/mwalletmng/NbpflhINoTlwfrPMlgxy.png\",\"type\":\"lottie\",\"variableLottie\":\"true\",\"repeatCount\":\"-1\",\"extInfo\":{\"lottieBizId\":\"VATODO_MaYiIcon\",\"lottieScene\":\"VATODO_MaYiIcon\"}},\"carousel\":{\"items\":[{\"data\":{\"text\":\"这里可以发现附近的服务～\"},\"countdown\":{\"endText\":\"这里可以发现附近的服务～\",\"targetTime\":\"0\",\"order\":\"reverse\"}}]}},\"templateId\":\"AssistantCardList_assistantTip\",\"templateVersion\":27}]"
+        }
+      },
+      "tabContent_0_item_7": {
+        "id": "tabContent_0_item_7",
+        "templateId": "AssistantCardList_assistantTip",
+        "version": "27",
+        "fields": {
+          "blockId": "margin_none_radius_none",
+          "cardInfo": "[{\"data\":{\"leftIcon\":{\"mediaUrl\":\"A*Z42lSbaKUTgAAAAAAAAAAAAADmx1AQ\",\"placeholder\":\"https://gw.alipayobjects.com/zos/mwalletmng/NbpflhINoTlwfrPMlgxy.png\",\"type\":\"lottie\",\"variableLottie\":\"true\",\"repeatCount\":\"-1\",\"extInfo\":{\"lottieBizId\":\"VATODO_MaYiIcon\",\"lottieScene\":\"VATODO_MaYiIcon\"}},\"carousel\":{\"items\":[{\"data\":{\"text\":\"这里可以发现附近的服务～\"},\"countdown\":{\"endText\":\"这里可以发现附近的服务～\",\"targetTime\":\"0\",\"order\":\"reverse\"}}]}},\"templateId\":\"AssistantCardList_assistantTip\",\"templateVersion\":27}]"
+        }
+      },
+      "tabContent_0_item_8": {
+        "id": "tabContent_0_item_8",
+        "templateId": "AssistantCardList_assistantTip",
+        "version": "27",
+        "fields": {
+          "blockId": "margin_none_radius_none",
+          "cardInfo": "[{\"data\":{\"leftIcon\":{\"mediaUrl\":\"A*Z42lSbaKUTgAAAAAAAAAAAAADmx1AQ\",\"placeholder\":\"https://gw.alipayobjects.com/zos/mwalletmng/NbpflhINoTlwfrPMlgxy.png\",\"type\":\"lottie\",\"variableLottie\":\"true\",\"repeatCount\":\"-1\",\"extInfo\":{\"lottieBizId\":\"VATODO_MaYiIcon\",\"lottieScene\":\"VATODO_MaYiIcon\"}},\"carousel\":{\"items\":[{\"data\":{\"text\":\"这里可以发现附近的服务～\"},\"countdown\":{\"endText\":\"这里可以发现附近的服务～\",\"targetTime\":\"0\",\"order\":\"reverse\"}}]}},\"templateId\":\"AssistantCardList_assistantTip\",\"templateVersion\":27}]"
+        }
+      },
+      "tabContent_0_item_9": {
+        "id": "tabContent_0_item_9",
+        "templateId": "AssistantCardList_assistantTip",
+        "version": "27",
+        "fields": {
+          "blockId": "margin_none_radius_none",
+          "cardInfo": "[{\"data\":{\"leftIcon\":{\"mediaUrl\":\"A*Z42lSbaKUTgAAAAAAAAAAAAADmx1AQ\",\"placeholder\":\"https://gw.alipayobjects.com/zos/mwalletmng/NbpflhINoTlwfrPMlgxy.png\",\"type\":\"lottie\",\"variableLottie\":\"true\",\"repeatCount\":\"-1\",\"extInfo\":{\"lottieBizId\":\"VATODO_MaYiIcon\",\"lottieScene\":\"VATODO_MaYiIcon\"}},\"carousel\":{\"items\":[{\"data\":{\"text\":\"这里可以发现附近的服务～\"},\"countdown\":{\"endText\":\"这里可以发现附近的服务～\",\"targetTime\":\"0\",\"order\":\"reverse\"}}]}},\"templateId\":\"AssistantCardList_assistantTip\",\"templateVersion\":27}]"
+        }
+      },
+      "tabContent_0_item_10": {
+        "id": "tabContent_0_item_10",
+        "templateId": "AssistantCardList_assistantTip",
+        "version": "27",
+        "fields": {
+          "blockId": "margin_none_radius_none",
+          "cardInfo": "[{\"data\":{\"leftIcon\":{\"mediaUrl\":\"A*Z42lSbaKUTgAAAAAAAAAAAAADmx1AQ\",\"placeholder\":\"https://gw.alipayobjects.com/zos/mwalletmng/NbpflhINoTlwfrPMlgxy.png\",\"type\":\"lottie\",\"variableLottie\":\"true\",\"repeatCount\":\"-1\",\"extInfo\":{\"lottieBizId\":\"VATODO_MaYiIcon\",\"lottieScene\":\"VATODO_MaYiIcon\"}},\"carousel\":{\"items\":[{\"data\":{\"text\":\"这里可以发现附近的服务～\"},\"countdown\":{\"endText\":\"这里可以发现附近的服务～\",\"targetTime\":\"0\",\"order\":\"reverse\"}}]}},\"templateId\":\"AssistantCardList_assistantTip\",\"templateVersion\":27}]"
+        }
+      }
+    }
+  },
+  "container": [
+    {
+      "type": "cube",
+      "id": "AssistantCardList_assistantTip",
+      "fileId": "A*X_OsQbBEga4AAAAAAAAAAAAADrh1AQ",
+      "version": "27",
+      "bizCode": "AssistantCardList",
+      "md5": "8b18e2661f88f36f997457a59368e538",
+      "ext": "{\"TMPL_NEW_STATUS\":\"GRAY\",\"cardStructure\":\"{}\",\"TMPL_NEW_FLAG\":\"Y\",\"TMPL_NEW_PERCENTVAL\":\"0\"}"
+    }
+  ],
+  "global": {
+  },
+  "endpoint": {
+    "protocolName": "dynamic",
+    "protocolVersion": "1.0.0"
+  }
+}

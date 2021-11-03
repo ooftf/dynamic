@@ -19,6 +19,7 @@ import com.ooftf.marionette.node.view.ViewNodeCreator
 import com.ooftf.marionette.node.waterfall.WaterfallNodeCreator
 import com.ooftf.marionette.template.Template
 import org.json.JSONObject
+import org.w3c.dom.Node
 
 // 每个 activity 对应一个  NodeRenderContext  实例
 // 每个 fragment 对应一个 NodeRenderContext 实例？ 这个还没想好
@@ -89,5 +90,19 @@ class NodeContext(val context: Context) {
 
     fun dispatchEvent(action:String,params:JSONObject){
         eventHandles.get(action)?.invoke(params)
+    }
+    val loadMoreListeners = ArrayList<(INode)->Unit>()
+    fun addLoadMoreListener(listener:(INode)->Unit){
+        loadMoreListeners.add(listener)
+    }
+    fun removeLoadMoreListener(listener:(INode)->Unit){
+        loadMoreListeners.remove(listener)
+    }
+    val refreshListeners = ArrayList<(INode)->Unit>()
+    fun addRefreshListener(listener:(INode)->Unit){
+        refreshListeners.add(listener)
+    }
+    fun removeRefreshListener(listener:(INode)->Unit){
+        refreshListeners.remove(listener)
     }
 }

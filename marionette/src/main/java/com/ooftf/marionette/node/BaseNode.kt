@@ -17,10 +17,10 @@ import java.util.regex.Pattern
 abstract class BaseNode<T : View>(val context: NodeContext) : INode {
     var view: T? = null
     var data: JSONObject? = null
-    var childNodeRenders = SparseArray<INode>()
+    var childNodes = SparseArray<INode>()
     var parent : INode? = null
     var mBinder = Binder()
-    var refreshLayout:SmartRefreshLayout?=null
+    var smartLayout:SmartRefreshLayout?=null
     override fun parse(parent: ViewGroup?, json: JSONObject): View {
         data = json
         view = createView()
@@ -42,7 +42,7 @@ abstract class BaseNode<T : View>(val context: NodeContext) : INode {
         handleAttrs(view!!,json)
         if(json.has("refresh")|| json.has("loadMore")){
             val smart = SmartRefreshLayout(context.context)
-            refreshLayout = smart
+            smartLayout = smart
             result.layoutParams?.let {
                 smart.layoutParams = ViewGroup.LayoutParams(it.width,it.height)
             }
@@ -60,10 +60,14 @@ abstract class BaseNode<T : View>(val context: NodeContext) : INode {
             }
 
             smart.setOnLoadMoreListener {
-                TODO("实现全局事件监听")
+                context.loadMoreListeners.forEach {
+                    it.invoke(this)
+                }
             }
             smart.setOnRefreshListener {
-                TODO("实现全局事件监听")
+                context.refreshListeners.forEach {
+                    it.invoke(this)
+                }
             }
         }
         return result
@@ -102,7 +106,7 @@ abstract class BaseNode<T : View>(val context: NodeContext) : INode {
         if (local.has("id")&&local.getString("id") == id) {
             return this
         }
-        childNodeRenders.forEach {key, value ->
+        childNodes.forEach { key, value ->
         val childNodeRender = value.findNodeRenderById(id)
             if (childNodeRender != null) {
                 return childNodeRender
@@ -120,7 +124,7 @@ abstract class BaseNode<T : View>(val context: NodeContext) : INode {
         return view
     }
     override fun getChildNode(): SparseArray<INode> {
-        return childNodeRenders
+        return childNodes
     }
 
     open fun handleLayoutAttrs(view: T, layout: JSONObject) {
@@ -189,7 +193,7 @@ abstract class BaseNode<T : View>(val context: NodeContext) : INode {
             val childrenData = children.getJSONObject(it)
             val nodeRender = context.createNodeByType(childrenData.getString("type"))
             nodeRender.setParentNode(this)
-            childNodeRenders.put(it,nodeRender)
+            childNodes.put(it,nodeRender)
             val childrenView = nodeRender.parse(parent,childrenData)
             parent.addView(childrenView)
         }
@@ -225,20 +229,35 @@ abstract class BaseNode<T : View>(val context: NodeContext) : INode {
     }
 
     override fun addChildNode(position: Int, child: INode) {
-        childNodeRenders.put(position,child)
+        childNodes.put(position,child)
         child.setParentNode(this)
     }
 
     override fun removeChildNode(position: Int,child: INode) {
-       if( childNodeRenders.remove(position,child)){
+       if( childNodes.remove(position,child)){
            child.setParentNode(null)
        }
+    }
+
+    override fun removeChildNode(child: INode) {
+        val index = childNodes.indexOfValue(child)
+        if(index>=0){
+            childNodes.removeAt(index)
+        }
     }
 
     fun clear(){
         view = null
         data = null
-        childNodeRenders.clear()
+        childNodes.clear()
         mBinder.clear()
+    }
+
+    override fun finishLoadMore() {
+        smartLayout?.finishLoadMore()
+    }
+
+    override fun finishRefresh() {
+        smartLayout?.finishRefresh()
     }
 }

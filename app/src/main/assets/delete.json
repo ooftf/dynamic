@@ -1,0 +1,22 @@
+{
+  "hierarchy": {
+    "delta": {
+      "opType": "delete",
+      "parent": "tabContent_0",
+      "target": [
+        "tabContent_0_item_2",
+        "tabContent_0_item_4"
+      ]
+    },
+    "data": {
+    }
+  },
+  "container": [
+  ],
+  "global": {
+  },
+  "endpoint": {
+    "protocolName": "dynamic",
+    "protocolVersion": "1.0.0"
+  }
+}

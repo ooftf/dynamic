@@ -1,0 +1,38 @@
+{
+  "hierarchy": {
+    "root": "root",
+    "structure": {
+      "root": [
+        "content"
+      ]
+    }
+  },
+  "data": {
+    "content": {
+      "id": "waterfall_frame_item_0",
+      "templateId": "AssistantCardList_assistantTip",
+      "version": "27",
+      "fields": {
+        "blockId": "margin_none_radius_none",
+        "cardInfo": "[{\"data\":{\"leftIcon\":{\"mediaUrl\":\"A*Z42lSbaKUTgAAAAAAAAAAAAADmx1AQ\",\"placeholder\":\"https://gw.alipayobjects.com/zos/mwalletmng/NbpflhINoTlwfrPMlgxy.png\",\"type\":\"lottie\",\"variableLottie\":\"true\",\"repeatCount\":\"-1\",\"extInfo\":{\"lottieBizId\":\"VATODO_MaYiIcon\",\"lottieScene\":\"VATODO_MaYiIcon\"}},\"carousel\":{\"items\":[{\"data\":{\"text\":\"这里可以发现附近的服务～\"},\"countdown\":{\"endText\":\"这里可以发现附近的服务～\",\"targetTime\":\"0\",\"order\":\"reverse\"}}]}},\"templateId\":\"AssistantCardList_assistantTip\",\"templateVersion\":27}]"
+      }
+    }
+  },
+  "container": [
+    {
+      "type": "cube",
+      "id": "AssistantCardList_assistantTip",
+      "fileId": "A*X_OsQbBEga4AAAAAAAAAAAAADrh1AQ",
+      "version": "27",
+      "bizCode": "AssistantCardList",
+      "md5": "8b18e2661f88f36f997457a59368e538",
+      "ext": "{\"TMPL_NEW_STATUS\":\"GRAY\",\"cardStructure\":\"{}\",\"TMPL_NEW_FLAG\":\"Y\",\"TMPL_NEW_PERCENTVAL\":\"0\"}"
+    }
+  ],
+  "global": {
+  },
+  "endpoint": {
+    "protocolName": "dynamic",
+    "protocolVersion": "1.0.0"
+  }
+}

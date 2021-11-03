@@ -21,4 +21,7 @@ interface INode {
     fun injectField(key:String,value:String)
     fun addChildNode(position:Int,child:INode)
     fun removeChildNode(position:Int,child: INode)
+    fun removeChildNode(child: INode)
+    fun finishLoadMore()
+    fun finishRefresh()
 }

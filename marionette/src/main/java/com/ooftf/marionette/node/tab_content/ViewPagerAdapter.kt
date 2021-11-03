@@ -31,11 +31,11 @@ class ViewPagerAdapter:FragmentStateAdapter {
     }
 
     override fun createFragment(position: Int): Fragment {
-        val node = parent.childNodeRenders.getOrElse(position) {
+        val node = parent.childNodes.getOrElse(position) {
             val childrenData = data.getJSONObject(position)
             val nodeRender = parent.context.createNodeByType(childrenData.getString("type"))
             nodeRender.setParentNode(parent)
-            parent.childNodeRenders.put(position, nodeRender)
+            parent.childNodes.put(position, nodeRender)
             nodeRender
         }
         return ItemFragment(node,data.getJSONObject(position))

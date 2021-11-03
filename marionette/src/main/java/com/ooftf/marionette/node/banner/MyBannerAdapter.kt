@@ -28,13 +28,12 @@ class MyBannerAdapter(val context: NodeContext, datas: MutableList<JSONObject>?,
 
     override fun onViewAttachedToWindow(holder: VH) {
         super.onViewAttachedToWindow(holder)
-        recyclerNode.getChildNode().put(holder.bindingAdapterPosition,holder.node)
+        recyclerNode.addChildNode(holder.bindingAdapterPosition,holder.node)
     }
 
     override fun onViewDetachedFromWindow(holder: VH) {
         super.onViewDetachedFromWindow(holder)
-        recyclerNode.getChildNode().removeAt(holder.bindingAdapterPosition)
-
+        recyclerNode.removeChildNode(holder.node)
     }
 }
 

@@ -3,7 +3,10 @@ package com.ooftf.demo.dynamic
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
+import androidx.lifecycle.lifecycleScope
 import com.ooftf.marionette.node.NodeContext
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +19,18 @@ class MainActivity : AppCompatActivity() {
         data?.apply {
             val nodeRootView = nodeContext.parse(root,data)
             root.addView(nodeRootView)
+        }
+        nodeContext.addLoadMoreListener {
+            lifecycleScope.launch {
+                delay(2000)
+                it.finishLoadMore()
+            }
+        }
+        nodeContext.addRefreshListener {
+            lifecycleScope.launch {
+                delay(2000)
+                it.finishRefresh()
+            }
         }
     }
 }

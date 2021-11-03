@@ -176,7 +176,7 @@
           "type": "Banner",
           "layout": {
             "width": "match_parent",
-            "height": "360"
+            "height": "480"
           },
           "children": [
             {
@@ -303,9 +303,7 @@
         "我的",
         "收藏",
         "热门",
-        "最新",
-        "个人",
-        "回收"
+        "最新"
       ]
     },
     "body": {
@@ -315,7 +313,7 @@
       "layout": {
         "width": "match_parent",
         "height": "match_parent",
-        "background-color": "#02034f"
+        "background-color": "#ffffff"
       },
       "children": [
         {
@@ -505,27 +503,14 @@
           ]
         },
         {
-          "id": "item_tabContent_2",
-          "type": "TextView",
-          "layout": {
-            "background-color": "#0000ff",
-            "text": "tab2"
-          }
-        },
-        {
           "id": "item_tabContent_3",
           "type": "TextView",
           "layout": {
-            "background-color": "#0000ff",
-            "text": "tab3"
-          }
-        },
-        {
-          "id": "item_tabContent_4",
-          "type": "TextView",
-          "layout": {
-            "background-color": "#0000ff",
-            "text": "tab4"
+            "width": "match_parent",
+            "height": "match_parent",
+            "background-color": "#ffffff",
+            "text": "tab3",
+            "gravity": "center"
           }
         },
         {

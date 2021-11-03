@@ -1,8 +1,6 @@
 package com.ooftf.marionette.node.recycler_view
 
 import android.util.Log
-import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ooftf.marionette.node.BaseNode
@@ -22,12 +20,14 @@ open class RecyclerViewNode(context: NodeContext) : BaseNode<RecyclerView>(conte
         val children = rootViewJsonObj.getJSONArray("children")
         view?.let {
             Log.e("RecyclerView","init")
-            it.layoutManager = genLayoutManager()
+            it.layoutManager = genLayoutManager(it)
+
+
             it.adapter = Adapter(context,children,this)
         }
     }
 
-    open fun genLayoutManager(): RecyclerView.LayoutManager {
+    open fun genLayoutManager(recyclerView: RecyclerView): RecyclerView.LayoutManager {
         return LinearLayoutManager(context.context,LinearLayoutManager.VERTICAL,false)
     }
 }
